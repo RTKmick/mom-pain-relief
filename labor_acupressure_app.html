@@ -1,0 +1,1555 @@
+<!DOCTYPE html><html lang="zh-TW"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjExYjc0YTUyNzgwMDk5ZjEzNDY0MmNlZWM3ZGE4MjNkMTc4MDc2ZjIiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIxNDY4NTk1NjcxNjY3NTAxODI0OSIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjXzIyYmI2Zjc1YjI4ZjI4YjZfbGFib3JfYWN1cHJlc3N1cmVfYXBwLmh0bWwtMzA5In0sImV4cCI6MTc2NDU3MzM2NSwiaWF0IjoxNzY0NTY5NzY1LCJhbGciOiJSUzI1NiJ9.EUWgFJic96vOZGjx6l4tnot1Sw5fERYUZTAy57bJT80hkKvDrV7lhWHHGXJAieEkES-xb3GEOymR9y2SKm12hUsDHG8yvi6pXlr1VPuRapLp1Wssh-5QGUmLw2TWeAcXxIas3Mm96LzR4EsPoOaHb9Jc925LAKWAY7y9jf81_qe1h5-X831Mct-inEhEk8NT4nddQJ3_lN4bEgT5OHNuMIjZofCum-2vETsLgbs2XV7wkQk-OmvUJzvlXmuyfPW6u4VjhRdIRf9TZhtPumxq6HbN5pfN5tR9cci4k9ra4Ucs7yn8XpUX1-qHFtf66FiQif7qUJvbzA82EHuILIUNRA","c_22bb6f75b28f28b6_labor_acupressure_app.html-309")</script><script>'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-2.5-flash-preview-09-2025","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-2.5-flash-image-preview","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>準媽咪的溫柔減痛好幫手 - 互動教學</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #be185d;
+            --secondary: #db2777;
+            --bg-start: #fffbf0;
+            --bg-end: #fff0f5;
+            --text-main: #831843;
+            --text-light: #4a5568;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        #app-container {
+            width: 100%;
+            max-width: 480px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 481px) {
+            #app-container {
+                height: 90vh;
+                max-height: 850px;
+                border-radius: 20px;
+            }
+        }
+
+        /* --- Header Buttons (Music & Download) --- */
+        .header-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+
+        .icon-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--secondary);
+            color: var(--primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+
+        .icon-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .icon-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 0 10px rgba(190, 24, 93, 0.5);
+            animation: pulse-border 3s infinite;
+        }
+
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(190, 24, 93, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(190, 24, 93, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(190, 24, 93, 0); }
+        }
+
+        /* --- Progress Bar --- */
+        .progress-bar-container {
+            width: 100%;
+            height: 6px;
+            background: #fce7f3;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--primary);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        /* --- Slide Structure --- */
+        .slide {
+            flex: 1;
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch; 
+        }
+
+        .slide.active {
+            display: flex;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 20px 0 20px;
+            width: 100%;
+        }
+
+        /* --- Typography --- */
+        h1 {
+            color: var(--primary);
+            font-size: 26px;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--text-main);
+            font-size: 22px;
+            margin-bottom: 15px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        p {
+            color: var(--text-light);
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--secondary);
+            background: #fdf2f8;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .interaction-hint {
+            font-size: 14px;
+            color: var(--primary);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 5px 12px;
+            border-radius: 15px;
+            border: 1px dashed var(--secondary);
+            margin-top: -20px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 5;
+            animation: bounce 2s infinite;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-5px);}
+            60% {transform: translateY(-3px);}
+        }
+
+        /* --- Timer Styles --- */
+        .timer-box {
+            background: #fff;
+            border: 2px solid #fce7f3;
+            border-radius: 15px;
+            padding: 15px;
+            width: 100%;
+            max-width: 320px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .timer-title {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .timer-display {
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--primary);
+            font-family: monospace;
+            line-height: 1;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .timer-controls {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .timer-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-family: 'Zen Maru Gothic', sans-serif;
+        }
+
+        .timer-btn:active { transform: scale(0.95); }
+        
+        .timer-btn.reset {
+            background: #e2e8f0;
+            color: var(--text-light);
+        }
+
+        /* --- Illustration Box --- */
+        .illustration-box {
+            width: 80vw;
+            height: 80vw;
+            max-width: 320px;
+            max-height: 320px;
+            margin: 10px auto 25px;
+            position: relative;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 8px 20px rgba(219, 39, 119, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #fff;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .illustration-box svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --- Animations --- */
+        @keyframes pulse-dot {
+            0% { r: 5; opacity: 1; transform: scale(1); }
+            50% { r: 5; opacity: 0.6; transform: scale(1.5); }
+            100% { r: 5; opacity: 1; transform: scale(1); }
+        }
+        
+        .anim-pulse {
+            transform-origin: center;
+            transform-box: fill-box;
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        @keyframes press-action {
+            0% { opacity: 0; transform: translate(10px, 10px) scale(1.2); }
+            20% { opacity: 1; transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-2px, -2px) scale(0.95); }
+            80% { opacity: 1; transform: translate(0, 0) scale(1); }
+            100% { opacity: 0; transform: translate(0, 0) scale(1); }
+        }
+
+        .feedback-anim {
+            animation: press-action 1.5s ease-out forwards;
+        }
+
+        @keyframes press-thumb-icon {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(2px, 2px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .anim-press {
+            animation: press-thumb-icon 1s infinite ease-in-out;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Buttons --- */
+        .btn-container {
+            width: 100%;
+            padding: 20px 25px;
+            padding-bottom: calc(20px + env(safe-area-inset-bottom)); 
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            background: #fff;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+            z-index: 20;
+            flex-shrink: 0;
+        }
+
+        .btn {
+            flex: 1;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 16px 20px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(190, 24, 93, 0.3);
+            font-family: 'Zen Maru Gothic', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            white-space: nowrap;
+            touch-action: manipulation;
+            -webkit-appearance: none;
+        }
+
+        .btn:active { transform: scale(0.96); opacity: 0.9; }
+        
+        .btn.secondary {
+            background: #fff;
+            color: var(--text-main);
+            border: 2px solid #fbcfe8;
+            box-shadow: none;
+        }
+
+        /* --- Step List --- */
+        .step-list {
+            list-style: none;
+            text-align: left;
+            width: 100%;
+            padding: 0 5px;
+            margin-bottom: 10px;
+        }
+
+        .step-list li {
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            border-radius: 15px;
+            border: 1px solid #fce7f3;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.03);
+            display: none; /* Hidden initially */
+            align-items: center;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .step-list li.show {
+            display: flex;
+            opacity: 1;
+            transform: translateX(0);
+            border-left: 6px solid var(--primary); /* Highlight active */
+            background-color: #fff5f7; /* Subtle highlight bg */
+        }
+        
+        .step-list li.done {
+            display: flex;
+            opacity: 0.6; /* Dim completed steps */
+            border-left: 6px solid #ccc;
+            background-color: #f9fafb;
+        }
+
+        .step-thumb {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            background: #fff5f7;
+            border: 1px solid #fbcfe8;
+            margin-right: 15px;
+            flex-shrink: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .step-thumb svg {
+            width: 90%;
+            height: 90%;
+        }
+
+        .step-info {
+            flex-grow: 1;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: var(--text-main);
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .step-time {
+            font-size: 0.85em;
+            color: #666;
+            background: #fff;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .flip-h { transform: scaleX(-1); }
+
+    </style>
+</head>
+<body>
+
+    <!-- Defining SVGs for reuse -->
+    <svg style="display: none;">
+        <!-- Hand Symbol (LI4) -->
+        <symbol id="icon-hand" viewBox="0 0 240 220">
+            <path d="M80 210 C75 180 70 155 55 145 L40 135 C32 130 28 115 35 105 C40 95 55 95 65 108 L78 122 C82 100 85 80 85 80 L82 40 C82 25 98 25 102 40 L108 100 L115 25 C115 10 132 10 135 25 L138 102 L148 35 C148 20 165 20 168 35 L162 105 L175 75 C178 65 192 70 188 85 L170 135 C165 160 160 180 160 210" fill="#fcefe9" stroke="#831843" stroke-width="2.5" stroke-linejoin="round"></path>
+            <path d="M38 115 C42 110 48 110 52 115 C52 122 48 125 38 122" fill="#fff" stroke="#d69e8e" stroke-width="1"></path>
+            <path d="M85 45 C90 40 96 40 100 45 C98 52 90 52 85 45" fill="#fff" stroke="#d69e8e" stroke-width="1"></path>
+            <path d="M118 30 C123 25 129 25 133 30 C131 37 123 37 118 30" fill="#fff" stroke="#d69e8e" stroke-width="1"></path>
+            <path d="M151 40 C156 35 162 35 166 40 C164 47 156 47 151 40" fill="#fff" stroke="#d69e8e" stroke-width="1"></path>
+            <path d="M178 78 C182 73 186 73 189 78 C187 83 180 83 178 78" fill="#fff" stroke="#d69e8e" stroke-width="1"></path>
+            <circle cx="92" cy="130" r="8" fill="#dc2626"></circle>
+        </symbol>
+
+        <!-- Leg Symbol (SP6) -->
+        <symbol id="icon-leg" viewBox="0 0 240 220">
+            <path d="M95 20 L95 140 Q95 160 65 175 L45 185 C35 188 35 205 50 205 L60 205 Q90 190 120 205 L135 205 C155 205 165 190 162 160 C160 140 155 100 155 20 Z" fill="#fcefe9" stroke="#831843" stroke-width="2" stroke-linejoin="round"></path>
+            <path d="M42 190 Q46 186 50 190 C50 195 46 198 42 195 C38 198 38 194 42 190" fill="#fff" stroke="#d69e8e" stroke-width="1"></path>
+            <path d="M110 150 Q125 150 125 165 Q125 180 110 180 Q95 180 95 165 Q95 150 110 150" fill="#f0e0d6" stroke="#d69e8e" stroke-width="1.5"></path>
+            <circle cx="120" cy="115" r="8" fill="#dc2626"></circle>
+        </symbol>
+
+        <!-- Pressing Thumb Icon -->
+        <symbol id="icon-thumb-press" viewBox="0 0 50 50">
+            <path d="M10 40 L20 10 L35 10 L45 35 L30 45 Z" fill="#ffe4e1" stroke="#d69e8e" stroke-width="2" stroke-linejoin="round"></path>
+            <path d="M20 10 Q22 8 25 10" fill="none" stroke="#eec" stroke-width="2"></path>
+        </symbol>
+    </svg>
+
+    <div id="app-container">
+        <!-- Header Controls -->
+        <div class="header-controls">
+            <!-- Music Button -->
+            <button class="icon-btn active" onclick="toggleMusic()" id="music-btn" title="播放/暫停巴哈 (C大調前奏曲)">
+                <i class="fa-solid fa-volume-high"></i>
+            </button>
+            <!-- Download Button -->
+            <button class="icon-btn" onclick="downloadApp()" title="下載 App">
+                <i class="fa-solid fa-download"></i>
+            </button>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress"></div>
+        </div>
+
+        <!-- SLIDE 1: Intro -->
+        <div class="slide active" id="slide-1">
+            <div class="slide-content-wrapper">
+                <div class="illustration-box" style="border:none; box-shadow:none; background:transparent;">
+                    <i class="fa-solid fa-hands-holding-child" style="font-size: 140px; color: #be185d;"></i>
+                </div>
+                <h1 class="fade-in-up">準媽咪的<br>溫柔減痛互動課</h1>
+                <p class="subtitle fade-in-up" style="animation-delay: 0.2s;">爸爸神隊友必備</p>
+                <p class="fade-in-up" style="animation-delay: 0.4s;">
+                    穴位按摩研究實證有效。<br>跟著步驟做，給媽咪最大支持。
+                </p>
+            </div>
+            <div class="btn-container">
+                <button class="btn" onclick="startApp()">開始學習 <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: Hand Point (LI4) - Interactive -->
+        <div class="slide" id="slide-2">
+            <div class="slide-content-wrapper">
+                <h2>1. 手部：合谷穴</h2>
+                <div class="illustration-box">
+                    <svg viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                        <circle cx="120" cy="110" r="95" fill="#fff5f7"></circle>
+                        <use href="#icon-hand"></use>
+                        <!-- Visible Dot -->
+                        <circle class="anim-pulse" cx="92" cy="130" r="8" fill="#dc2626"></circle>
+                        <!-- INVISIBLE HIT AREA (Larger for mobile tap) -->
+                        <circle cx="92" cy="130" r="40" fill="transparent" onclick="interactPoint('feedback-li4')" style="cursor: pointer; -webkit-tap-highlight-color: transparent;"></circle>
+                        
+                        <g id="feedback-li4" style="opacity: 0; pointer-events: none;">
+                            <use href="#icon-thumb-press" x="65" y="100" width="60" height="60" transform="rotate(-45 100 130)"></use>
+                            <text x="120" y="100" font-family="Zen Maru Gothic" font-size="16" fill="#be185d" font-weight="bold" text-anchor="middle" style="text-shadow: 1px 1px 0 #fff;">就是這裡！</text>
+                        </g>
+                        <line x1="92" y1="130" x2="60" y2="170" stroke="#db2777" stroke-width="2" stroke-dasharray="4" pointer-events="none"></line>
+                        <text x="30" y="190" font-family="Zen Maru Gothic, sans-serif" font-size="16" fill="#db2777" font-weight="bold" pointer-events="none">虎口這裡！</text>
+                    </svg>
+                </div>
+                
+                <p><strong>📍 位置：</strong>手背虎口處，大拇指與食指骨頭交會的凹陷點。</p>
+                <p><strong>✨ 技巧：</strong>爸爸用大拇指按壓，要讓媽咪感覺到<span style="color:#be185d; font-weight:bold;">「痠、麻、脹」</span>才有效！</p>
+            </div>
+            <div class="btn-container">
+                <button class="btn secondary" onclick="prevSlide()">上一步</button>
+                <button class="btn" onclick="nextSlide()">下一個穴位</button>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Leg Point (SP6) - Interactive -->
+        <div class="slide" id="slide-3">
+            <div class="slide-content-wrapper">
+                <h2>2. 足部：三陰交</h2>
+                <div class="illustration-box">
+                    <svg viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                        <circle cx="120" cy="110" r="95" fill="#fff5f7"></circle>
+                        <use href="#icon-leg"></use>
+                        <g transform="translate(108, 115)" pointer-events="none">
+                            <path d="M80 0 L100 5 L100 35 L80 40 C70 42 60 40 60 40 L60 0 C70 -2 80 0 80 0 Z" fill="#fcefe9" stroke="none"></path>
+                            <path d="M10 2 C10 -2 80 0 80 0 L80 10 C70 12 10 12 10 10 C5 10 5 4 10 2 Z" fill="#fcefe9" stroke="#d69e8e" stroke-width="1.5" stroke-linejoin="round"></path>
+                            <path d="M15 4 Q18 2 21 4" fill="none" stroke="#eec" stroke-width="1.5"></path>
+                            <path d="M10 12 C8 12 80 10 80 10 L80 20 C70 22 10 22 10 20 C5 20 5 14 10 12 Z" fill="#fcefe9" stroke="#d69e8e" stroke-width="1.5" stroke-linejoin="round"></path>
+                            <path d="M15 14 Q18 12 21 14" fill="none" stroke="#eec" stroke-width="1.5"></path>
+                            <path d="M12 22 C10 22 80 20 80 20 L80 30 C70 32 15 32 12 30 C8 30 8 24 12 22 Z" fill="#fcefe9" stroke="#d69e8e" stroke-width="1.5" stroke-linejoin="round"></path>
+                            <path d="M17 24 Q20 22 23 24" fill="none" stroke="#eec" stroke-width="1.5"></path>
+                            <path d="M15 32 C12 32 80 30 85 30 L85 38 L80 40 C70 42 18 40 15 38 C12 38 12 34 15 32 Z" fill="#fcefe9" stroke="#d69e8e" stroke-width="1.5" stroke-linejoin="round"></path>
+                            <path d="M19 34 Q22 32 25 34" fill="none" stroke="#eec" stroke-width="1.5"></path>
+                            <path d="M80 2 C80 2 95 -10 100 -12 C105 -15 105 -5 100 0 L85 8" fill="#fcefe9" stroke="#d69e8e" stroke-width="1.5" stroke-linejoin="round"></path>
+                            <path d="M98 -10 Q100 -12 102 -10" fill="none" stroke="#eec" stroke-width="1.5"></path>
+                            <path d="M80 0 L100 5 L100 35 L80 40" fill="#fcefe9" stroke="#d69e8e" stroke-width="1.5"></path>
+                        </g>
+                        <!-- Visible Dot -->
+                        <circle class="anim-pulse" cx="120" cy="115" r="8" fill="#dc2626"></circle>
+                        <!-- INVISIBLE HIT AREA -->
+                        <circle cx="120" cy="115" r="40" fill="transparent" onclick="interactPoint('feedback-sp6')" style="cursor: pointer; -webkit-tap-highlight-color: transparent;"></circle>
+
+                        <g id="feedback-sp6" style="opacity: 0; pointer-events: none;">
+                            <use href="#icon-thumb-press" x="95" y="85" width="60" height="60" transform="rotate(45 120 115)"></use>
+                            <text x="120" y="80" font-family="Zen Maru Gothic" font-size="16" fill="#be185d" font-weight="bold" text-anchor="middle" style="text-shadow: 1px 1px 0 #fff;">位置正確！</text>
+                        </g>
+                        <line x1="120" y1="115" x2="70" y2="80" stroke="#db2777" stroke-width="2" stroke-dasharray="4" pointer-events="none"></line>
+                        <text x="30" y="60" font-family="Zen Maru Gothic, sans-serif" font-size="18" fill="#831843" font-weight="bold" pointer-events="none">三陰交</text>
+                        <text x="30" y="80" font-family="Zen Maru Gothic, sans-serif" font-size="14" fill="#831843" pointer-events="none">(內踝尖上四指)</text>
+                    </svg>
+                </div>
+                
+                <p><strong>📍 位置：</strong>腳踝內側骨頭最高點，往上約「四根手指」寬度。</p>
+                <p><strong>✨ 功效：</strong>能幫助子宮頸擴張，促進產程順利。</p>
+            </div>
+            <div class="btn-container">
+                <button class="btn secondary" onclick="prevSlide()">上一步</button>
+                <button class="btn" onclick="nextSlide()">開始按摩流程</button>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Routine (With 3-Minute Timer) -->
+        <div class="slide" id="slide-4">
+            <div class="slide-content-wrapper" style="justify-content: flex-start;">
+                <h2>標準按摩流程</h2>
+                <p class="subtitle" id="routine-step-counter">步驟 1 / 4</p>
+                
+                <!-- TIMER SECTION -->
+                <div class="timer-box">
+                    <div class="timer-title">3分鐘 計時器</div>
+                    <div class="timer-display" id="timer-display">03:00</div>
+                    <div class="timer-controls">
+                        <button class="timer-btn" onclick="toggleTimer()" id="timer-toggle-btn">
+                            <i class="fa-solid fa-play"></i> 開始
+                        </button>
+                        <button class="timer-btn skip" onclick="skipStep()" title="跳過目前步驟">
+                            <i class="fa-solid fa-forward"></i>
+                        </button>
+                        <button class="timer-btn reset" onclick="resetTimer()">
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <ul class="step-list">
+                    <li id="step-1">
+                        <div class="step-thumb">
+                            <svg viewBox="0 0 240 220">
+                                <use href="#icon-hand"></use>
+                                <use href="#icon-thumb-press" x="70" y="100" width="60" height="60" class="anim-press" transform="rotate(-45 100 130)"></use>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-title">1. 左手 合谷穴 <i class="fa-solid fa-check-circle" style="color:#ddd;"></i></div>
+                            <div class="step-time"><i class="fa-regular fa-clock"></i> 持續 3 分鐘</div>
+                        </div>
+                    </li>
+                    <li id="step-2">
+                        <div class="step-thumb">
+                            <svg viewBox="0 0 240 220" class="flip-h">
+                                <use href="#icon-hand"></use>
+                                <use href="#icon-thumb-press" x="70" y="100" width="60" height="60" class="anim-press" transform="rotate(-45 100 130)"></use>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-title">2. 右手 合谷穴 <i class="fa-solid fa-check-circle" style="color:#ddd;"></i></div>
+                            <div class="step-time"><i class="fa-regular fa-clock"></i> 持續 3 分鐘</div>
+                        </div>
+                    </li>
+                    <li id="step-3">
+                        <div class="step-thumb">
+                            <svg viewBox="0 0 240 220">
+                                <use href="#icon-leg"></use>
+                                <use href="#icon-thumb-press" x="90" y="90" width="60" height="60" class="anim-press" transform="rotate(45 120 115)"></use>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-title">3. 右腳 三陰交 <i class="fa-solid fa-check-circle" style="color:#ddd;"></i></div>
+                            <div class="step-time"><i class="fa-regular fa-clock"></i> 持續 3 分鐘</div>
+                        </div>
+                    </li>
+                    <li id="step-4">
+                        <div class="step-thumb">
+                            <svg viewBox="0 0 240 220" class="flip-h">
+                                <use href="#icon-leg"></use>
+                                <use href="#icon-thumb-press" x="90" y="90" width="60" height="60" class="anim-press" transform="rotate(45 120 115)"></use>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-title">4. 左腳 三陰交 <i class="fa-solid fa-check-circle" style="color:#ddd;"></i></div>
+                            <div class="step-time"><i class="fa-regular fa-clock"></i> 持續 3 分鐘</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn-container">
+                <button class="btn secondary" onclick="prevSlide()">複習穴位</button>
+                <!-- Next button hidden until done -->
+                <button class="btn" id="final-next-btn" onclick="nextSlide()" style="display:none;">我完成了！</button>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: End -->
+        <div class="slide" id="slide-5">
+            <div class="slide-content-wrapper">
+                <div class="illustration-box" style="border-color: #fbcfe8; background: #fff0f5;">
+                    <i class="fa-solid fa-heart" style="font-size: 140px; color: #be185d; animation: pulse-dot 1s infinite;"></i>
+                </div>
+                <h1 style="margin-top:20px;">太棒了！</h1>
+                <p>爸爸的雙手是最好的止痛藥。</p>
+                <div style="background: #fff; padding: 20px; border-radius: 15px; border: 1px dashed #be185d; width:90%; margin:0 auto;">
+                    <p style="margin:0; font-size:14px; color:#666;">別忘了說這句通關密語：</p>
+                    <p style="color:#be185d; font-weight:bold; font-size:1.4em; margin:10px 0;">「妳做得很好！辛苦了！」</p>
+                </div>
+            </div>
+            <div class="btn-container">
+                <button class="btn" onclick="resetApp()"><i class="fa-solid fa-rotate-right"></i> 再看一次</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 5;
+        let timerInterval;
+        let timeRemaining = 180;
+        let isTimerRunning = false;
+        let currentRoutineStep = 1; // 1 to 4
+        
+        // --- Web Audio API for Bach's Prelude in C Major ---
+        let audioCtx;
+        let isPlaying = false;
+        let nextNoteTime = 0;
+        let schedulerTimer;
+        
+        // The notes for the first few measures of Bach's Prelude in C
+        const notes = [
+            // Measure 1: C Major (C E G C E G C E)
+            [261.63, 329.63, 392.00, 523.25, 659.25, 392.00, 523.25, 659.25], 
+            // Measure 2: C Major (Same, repeated in piece, here just once for variety)
+            [261.63, 329.63, 392.00, 523.25, 659.25, 392.00, 523.25, 659.25],
+            // Measure 3: Dm7 (C D A D F A D F) - Simplified pattern
+            [261.63, 293.66, 440.00, 587.33, 698.46, 440.00, 587.33, 698.46],
+            // Measure 4: G7 (B D G D F G D F)
+            [246.94, 293.66, 392.00, 587.33, 698.46, 392.00, 587.33, 698.46],
+            // Measure 5: C Major (C E G C E G C E)
+            [261.63, 329.63, 392.00, 523.25, 659.25, 392.00, 523.25, 659.25]
+        ];
+        
+        let currentMeasure = 0;
+        let currentNoteInMeasure = 0;
+        const tempo = 0.25; // Seconds per note (approx 60bpm for 16th notes)
+
+        function initAudio() {
+            if (audioCtx) return;
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            audioCtx = new AudioContext();
+        }
+
+        function playTone(freq, time) {
+            if (!audioCtx) return;
+            
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            
+            // "Triangle" wave sounds softer than square, like a electric piano/harp
+            osc.type = 'triangle'; 
+            osc.frequency.value = freq;
+            
+            // ADSR Envelope for a gentle plucked sound
+            gainNode.gain.setValueAtTime(0, time);
+            gainNode.gain.linearRampToValueAtTime(0.15, time + 0.05); // Attack
+            gainNode.gain.exponentialRampToValueAtTime(0.001, time + 1.5); // Decay/Release
+
+            osc.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+
+            osc.start(time);
+            osc.stop(time + 1.5);
+        }
+
+        function scheduler() {
+            // Schedule notes ahead
+            while (nextNoteTime < audioCtx.currentTime + 0.1) {
+                // Get current frequency
+                const freq = notes[currentMeasure][currentNoteInMeasure];
+                playTone(freq, nextNoteTime);
+                
+                // Advance note
+                nextNoteTime += tempo;
+                currentNoteInMeasure++;
+                
+                // Loop measures
+                if (currentNoteInMeasure >= 8) { // 8 notes per measure pattern
+                    currentNoteInMeasure = 0;
+                    currentMeasure++;
+                    if (currentMeasure >= notes.length) {
+                        currentMeasure = 0; // Loop back to start
+                    }
+                }
+            }
+            
+            if (isPlaying) {
+                schedulerTimer = setTimeout(scheduler, 25);
+            }
+        }
+
+        function toggleMusic() {
+            const btn = document.getElementById('music-btn');
+            const icon = btn.querySelector('i');
+
+            if (!audioCtx) initAudio();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+
+            if (isPlaying) {
+                // Stop
+                isPlaying = false;
+                clearTimeout(schedulerTimer);
+                btn.classList.remove('active');
+                icon.classList.remove('fa-volume-high');
+                icon.classList.add('fa-music');
+            } else {
+                // Play
+                isPlaying = true;
+                nextNoteTime = audioCtx.currentTime + 0.1;
+                scheduler();
+                btn.classList.add('active');
+                icon.classList.remove('fa-music');
+                icon.classList.add('fa-volume-high');
+            }
+        }
+
+        // Main App Logic
+        function startApp() {
+            initAudio();
+            // Start music on user interaction
+            if (!isPlaying) {
+                toggleMusic();
+            }
+            nextSlide();
+        }
+
+        function downloadApp() {
+            const htmlContent = "<!DOCTYPE html>" + document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], {type: 'text/html'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'labor_acupressure_app.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function updateProgress() {
+            const progress = ((currentSlide - 1) / (totalSlides - 1)) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+        }
+
+        function showSlide(slideIndex) {
+            // If entering the Routine Slide (4), initialize step-by-step
+            if (slideIndex === 4) {
+                initRoutineMode();
+            }
+
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            const targetSlide = document.getElementById(`slide-${slideIndex}`);
+            if(targetSlide) {
+                targetSlide.classList.add('active');
+                targetSlide.scrollTop = 0; 
+            }
+            
+            updateProgress();
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        function resetApp() {
+            currentSlide = 1;
+            showSlide(1);
+            resetTimer(); // Will also reset currentRoutineStep to 1 inside initRoutineMode logic implicitly
+        }
+
+        function interactPoint(feedbackId) {
+            const feedbackEl = document.getElementById(feedbackId);
+            feedbackEl.style.animation = 'none';
+            feedbackEl.offsetHeight; 
+            feedbackEl.style.animation = null; 
+            feedbackEl.classList.add('feedback-anim');
+        }
+
+        // --- Routine Step Logic ---
+
+        function initRoutineMode() {
+            currentRoutineStep = 1;
+            updateStepDisplay();
+            resetTimer();
+            document.getElementById('final-next-btn').style.display = 'none';
+        }
+
+        function updateStepDisplay() {
+            // Hide all steps first
+            document.querySelectorAll('.step-list li').forEach(li => {
+                li.classList.remove('show');
+                li.classList.remove('done');
+                li.querySelector('.fa-check-circle').style.color = '#ddd';
+            });
+
+            // Show current step
+            if (currentRoutineStep <= 4) {
+                const currentStepEl = document.getElementById(`step-${currentRoutineStep}`);
+                if (currentStepEl) {
+                    currentStepEl.classList.add('show');
+                    // Scroll to it gently
+                    currentStepEl.scrollIntoView({behavior: "smooth", block: "center"});
+                }
+                document.getElementById('routine-step-counter').textContent = `步驟 ${currentRoutineStep} / 4`;
+            }
+
+            // Mark previous steps as done and show them dimmed
+            for (let i = 1; i < currentRoutineStep; i++) {
+                const stepEl = document.getElementById(`step-${i}`);
+                if (stepEl) {
+                    stepEl.classList.add('show', 'done');
+                    stepEl.querySelector('.fa-check-circle').style.color = '#10b981';
+                }
+            }
+
+            if (currentRoutineStep > 4) {
+                // All done
+                document.getElementById('routine-step-counter').textContent = "完成！";
+                document.getElementById('final-next-btn').style.display = 'block';
+                document.querySelector('.timer-box').style.display = 'none'; // Hide timer when done
+            } else {
+                document.querySelector('.timer-box').style.display = 'flex';
+            }
+        }
+
+        function nextStep() {
+            currentRoutineStep++;
+            resetTimer(); // Reset time for next step
+            updateStepDisplay();
+        }
+
+        // --- Timer Functions ---
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            document.getElementById('timer-display').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function toggleTimer() {
+            const btn = document.getElementById('timer-toggle-btn');
+            if (isTimerRunning) {
+                // Pause
+                clearInterval(timerInterval);
+                isTimerRunning = false;
+                btn.innerHTML = '<i class="fa-solid fa-play"></i> 繼續';
+                btn.style.backgroundColor = 'var(--secondary)';
+            } else {
+                // Start
+                isTimerRunning = true;
+                btn.innerHTML = '<i class="fa-solid fa-pause"></i> 暫停';
+                btn.style.backgroundColor = '#ec4899';
+                
+                timerInterval = setInterval(() => {
+                    if (timeRemaining > 0) {
+                        timeRemaining--;
+                        updateTimerDisplay();
+                    } else {
+                        // Time's up
+                        clearInterval(timerInterval);
+                        isTimerRunning = false;
+                        // alert('✨ 3分鐘到了！做得很好，請換下一個部位或休息一下。');
+                        // Automatically move to next step
+                        nextStep();
+                    }
+                }, 1000);
+            }
+        }
+
+        function skipStep() {
+             // Force finish current step
+             clearInterval(timerInterval);
+             isTimerRunning = false;
+             nextStep();
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            timeRemaining = 180; // 3 minutes
+            updateTimerDisplay();
+            const btn = document.getElementById('timer-toggle-btn');
+            if(btn) {
+                btn.innerHTML = '<i class="fa-solid fa-play"></i> 開始';
+                btn.style.backgroundColor = 'var(--secondary)';
+            }
+        }
+    </script>
+
+</body></html>
